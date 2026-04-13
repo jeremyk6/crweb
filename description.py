@@ -14,7 +14,7 @@ def generateDescription(api, uid, latitude : float, longitude : float, c0: float
     # remove sidewalks, cycleways, service ways
     G = cs.Segmentation.prepare_network(G)
     # segment it using topology and semantic
-    seg = cs.Segmentation(ox.utils_graph.get_undirected(G), C0 = c0, C1 = c1, C2 = c2, max_cycle_elements = 10)
+    seg = cs.Segmentation(ox.convert.to_undirected(G), C0 = c0, C1 = c1, C2 = c2, max_cycle_elements = 10)
     seg.process()
     seg.to_json("cache/"+uid+"/intersection.json", longitude, latitude)
 
