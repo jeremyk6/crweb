@@ -35,7 +35,7 @@ def log(uid, lat, lng, c0, c1, c2, error=None, comment=None):
 
 
 # clear folders
-shutil.rmtree("cache", ignore_errors=True), shutil.os.mkdir("cache") , shutil.os.makedirs("log", exist_ok=True)
+shutil.rmtree("cache", ignore_errors=True), shutil.os.makedirs("cache", exist_ok=True) , shutil.os.makedirs("log", exist_ok=True)
 
 app = Flask(__name__)
 
